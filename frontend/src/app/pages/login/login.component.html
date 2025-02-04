@@ -1,17 +1,30 @@
 <div class="login-container">
-    <form (ngSubmit)="onLogin()">
-      <input 
-        type="text" 
-        [(ngModel)]="username" 
-        name="username" 
-        placeholder="Usuario"
-      >
-      <input 
-        type="password" 
-        [(ngModel)]="password" 
-        name="password" 
-        placeholder="Contraseña"
-      >
-      <button type="submit">Iniciar Sesión</button>
-    </form>
-  </div>
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Control de Proyectos</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form (ngSubmit)="onLogin()" class="login-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input matInput [(ngModel)]="username" name="username" required>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hidePassword ? 'password' : 'text'" 
+                 [(ngModel)]="password" name="password" required>
+          <mat-icon matSuffix (click)="hidePassword = !hidePassword">
+            {{hidePassword ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">
+          Iniciar Sesión
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

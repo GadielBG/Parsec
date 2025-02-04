@@ -1,0 +1,33 @@
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .sidenav-container {
+    flex: 1;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    background-color: #fafafa;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  mat-nav-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  
+  mat-icon {
+    margin-right: 8px;
+  }
